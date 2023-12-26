@@ -1,19 +1,33 @@
 /*
 [rewrite_local]
-https?:\/\/.*\.mlinkapp\.cc\/v1\/user\/authorizations$ url script-response-body https://raw.githubusercontent.com/yaheex/test/main/vip.js
+https?:\/\/.*\.mlinkapp\.cc\/v1\/user\/user_session\/authorizations$ url script-response-body https://raw.githubusercontent.com/yaheex/test/main/vip.js
 
 [mitm] 
 hostname=*.mlinkapp.cc
 
 ***********************************/
 
-var body = $response.body; 
-var obj = JSON.parse(body); 
-// 修改数据字段
-
-obj.data.username = "雅熙霸主丶";
-obj.data.level = "3";
-obj.data.freeTime = "659200000";
-
-// 重写响应体
-$done({ body: JSON.stringify(obj) });
+var cuttlefish ={"warning":"yahee"};
+var yahee = {
+  "msg" : "OK",
+  "data" : {
+    "id" : 1739223278108950528,
+    "displayName" : "",
+    "expireTime" : 1703759535606,
+    "phone" : "",
+    "status" : 1,
+    "agentNum" : 3,
+    "avatar" : "",
+    "level" : 3,
+    "freeTime" : 666600000,
+    "username" : "yahee666",
+    "role" : "general",
+    "vipType" : "",
+    "userNumber" : 2916500,
+    "email" : "",
+    "eid" : 6980696
+  },
+  "code" : 0
+}
+};
+$done({body: JSON.stringify(yahee)});
