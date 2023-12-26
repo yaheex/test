@@ -1,4 +1,6 @@
 /*
+https?:\/\/.*\.mlinkapp\.cc\/v1\/user\/authorizations$ url script-response-body https://raw.githubusercontent.com/yaheex/test/main/vip.js
+
 hostname=api.mlinkapp.cc
 ***********************************/
 var body = $response.body; 
