@@ -1,7 +1,11 @@
 /*
-CamScanner 解锁部分高级特权
+[rewrite_local]
+https?:\/\/.*\.mlinkapp\.cc\/v1\/user\/authorizations$ url script-response-body https://raw.githubusercontent.com/yaheex/test/main/vip.js
 
-hostname = api.mlinkapp.cc/v1/user
+[mitm] 
+hostname=*.mlinkapp.cc
+
+***********************************/
 
 var body = $response.body; 
 var obj = JSON.parse(body); 
