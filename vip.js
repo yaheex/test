@@ -1,27 +1,15 @@
 /*
-秒链VPN 解锁会员等级 可选路线
+CamScanner 解锁部分高级特权
 
-***************************
-[rewrite_local]
-^https?:\/\/api\.mlinkapp\.cc\/(v1\/v2\/user\/v1|v1\/spi/mservice) url script-response-body https://raw.githubusercontent.com/yaheex/test/main/vip.js
+hostname = api.mlinkapp.cc/v1/user
 
-[mitm]
-hostname = api.mlinkapp.cc
-**************************/
+var body = $response.body; 
+var obj = JSON.parse(body); 
+// 修改数据字段
 
-var body = $response.body;
-var url = $request.url;
-var obj = JSON.parse(body);
+obj.data.username = "雅熙霸主丶";
+obj.data.level = "3";
+obj.data.freeTime = "659200000";
 
-const v1 = '/v1/v2/user/v1';
-const time = '/v1/spi/mservice';
-
-if (url.indexOf(v1) != -1) {
-
-	obj.data["username"] = "雅熙霸主丶";
-	obj.data["level "] = "3";
-	obj.data["freeTime "] = "659200000";
-	
-	body = JSON.stringify(obj);
-}
-$done({body});
+// 重写响应体
+$done({ body: JSON.stringify(obj) });
