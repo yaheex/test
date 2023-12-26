@@ -1,10 +1,5 @@
 /*
-[rewrite_local]
-https?:\/\/.*\.mlinkapp\.cc\/v1\/user\/user_session\/authorizations$ url script-response-body https://raw.githubusercontent.com/yaheex/test/main/vip.js
-
-[mitm] 
-hostname=https?:\/\/.*\.mlinkapp.cc
-
+hostname=*.mlinkapp.cc
 ***********************************/
 var body = $response.body; 
 var obj = JSON.parse(body); 
