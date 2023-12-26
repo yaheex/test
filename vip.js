@@ -1,5 +1,5 @@
 /*
-hostname=*.mlinkapp.cc
+hostname=api.mlinkapp.cc
 ***********************************/
 var body = $response.body; 
 var obj = JSON.parse(body); 
