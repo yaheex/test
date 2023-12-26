@@ -1,5 +1,6 @@
 /*
-https?:\/\/.*\.mlinkapp\.cc\/v1\/user\/authorizations$ url script-response-body https://raw.githubusercontent.com/yaheex/test/main/vip.js
+[rewrite_local]
+^https?:\/\/.*\.mlinkapp\.cc\/v1\/user\/ url script-response-body https://raw.githubusercontent.com/yaheex/test/main/vip.js
 
 hostname=*.mlinkapp.cc
 ***********************************/
